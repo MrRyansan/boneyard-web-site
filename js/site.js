@@ -167,54 +167,6 @@ function tickClock() {
   renderFooter();
 }
 
-function bootScreen() {
-  const boot = document.getElementById("boot");
-  if (!boot) return;
-  if (sessionStorage.getItem("boneyard-booted")) {
-    boot.classList.add("hidden");
-    return;
-  }
-
-  const lines = [
-    `${BBS.software.toUpperCase()}   NODE 1`,
-    "COPYRIGHT (C) THE BONEYARD",
-    "",
-    "INITIALIZING OSSUARY...",
-    "  MEMORY CHECK ........... OK",
-    "  MESSAGE BASES .......... OK",
-    "  FILE AREAS ............. OK",
-    "  DOORS .................. OK",
-    "",
-    `ATDT ${BBS.telnet}`,
-    "CONNECT 14400/ARQ",
-    "",
-    "THE DEAD STILL LEAVE MESSAGES.",
-  ];
-
-  const pre = boot.querySelector("pre");
-  let i = 0;
-  pre.textContent = "";
-
-  const timer = setInterval(() => {
-    pre.textContent += lines[i] + "\n";
-    i += 1;
-    if (i >= lines.length) {
-      clearInterval(timer);
-      boot.querySelector(".hint").hidden = false;
-    }
-  }, 90);
-
-  const dismiss = () => {
-    clearInterval(timer);
-    sessionStorage.setItem("boneyard-booted", "1");
-    boot.classList.add("hidden");
-    window.removeEventListener("keydown", dismiss);
-  };
-
-  boot.addEventListener("click", dismiss);
-  window.addEventListener("keydown", dismiss);
-}
-
 document.addEventListener("click", (event) => {
   if (event.target.closest("[data-menu-toggle]")) {
     document.body.classList.toggle("nav-open");
@@ -237,5 +189,4 @@ renderHeader();
 renderNavBar();
 renderFooter();
 fillBbsFields();
-bootScreen();
 setInterval(tickClock, 1000);

@@ -20,10 +20,9 @@
         <article class="page">
           <p class="kicker">The Boneyard / Connect</p>
           <h1>Telnet directly to the BBS</h1>
-          <p class="lede">This website is a sign on the road. The board itself is a terminal session. Call from the browser below, or use a dedicated BBS client if you want the full ANSI treatment.</p>
+          <p class="lede">This website is a sign on the road. The board itself is a terminal session. Use a BBS client — you will see the ANSI the way it was drawn.</p>
           <p class="big-addr" data-bbs="telnet"></p>
           <div class="btn-row">
-            <a class="btn" href="#browser-telnet">Telnet from this page</a>
             <a class="btn" data-bbs-href="telnetUrl">Open telnet://</a>
             <button class="btn" type="button" data-copy-bbs="telnet">Copy address</button>
             <button class="btn" type="button" data-copy-bbs="sshCmd">Copy SSH command</button>
@@ -32,33 +31,6 @@
             <div class="stat"><dt>Telnet</dt><dd data-bbs="telnet"></dd></div>
             <div class="stat"><dt>SSH</dt><dd data-bbs="ssh"></dd></div>
           </div>
-          <h2 id="browser-telnet">From your browser</h2>
-          <p>No client to install. Click Connect in the terminal, wait for the board to paint, and log in. This is <a href="https://www.ftelnet.ca/">fTelnet</a> talking to <code data-bbs="telnet"></code> through your browser. A dedicated client is still better for file transfers and picky ANSI, but this is enough to get a handle and leave mail.</p>
-          <div class="ftelnet-embed">
-            <div id="fTelnetContainer" class="fTelnetContainer"></div>
-            <script>document.write('<script src="//embed-v2.ftelnet.ca/js/ftelnet-loader.norip.xfer.js?v=' + (new Date()).getTime() + '"><\/script>');</script>
-            <script>
-                var Options = new fTelnetOptions();
-                Options.BareLFtoCRLF = false;
-                Options.BitsPerSecond = 57600;
-                Options.ConnectionType = 'telnet';
-                Options.Emulation = 'ansi-bbs';
-                Options.Enter = '\r';
-                Options.Font = 'CP437';
-                Options.ForceWss = false;
-                Options.FullScreenOnConnect = false;
-                Options.Hostname = 'boneyard-bbs.com';
-                Options.LocalEcho = false;
-                Options.NegotiateLocalEcho = true;
-                Options.Port = 8073;
-                Options.ScreenColumns = 80;
-                Options.ScreenRows = 25;
-                Options.SendLocation = true;
-
-                var fTelnet = new fTelnetClient('fTelnetContainer', Options);
-            </script>
-          </div>
-          <p class="note">On a phone, rotate to landscape. The virtual keyboard in fTelnet has the arrow keys a BBS menu expects.</p>
           <h2>Best clients</h2>
           <p>A raw telnet window works. It is also the least fun. These clients speak CP437, 16-color ANSI, and the little protocols that make a Mystic board look like a Mystic board:</p>
           <ul>
