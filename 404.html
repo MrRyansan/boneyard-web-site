@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 — The Boneyard</title>
+  <meta name="description" content="File not found.">
+  <script>
+    (function () {
+      var known = ["about", "connect", "bbs-101", "css", "js", "assets", "index.html", "404.html"];
+      var parts = location.pathname.split("/").filter(Boolean);
+      var root = "/";
+      if (location.hostname.indexOf("github.io") !== -1 && parts[0] && known.indexOf(parts[0]) === -1) {
+        root = "/" + parts[0] + "/";
+      }
+      var base = document.createElement("base");
+      base.href = location.origin + root;
+      document.head.appendChild(base);
+    })();
+  </script>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-root="" data-page="welcome">
+  <a class="skip" href="#content">Skip to content</a>
+  <div class="crt flicker" id="app">
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <header id="site-header"></header>
+    <div class="shell">
+      <nav id="site-nav" aria-label="Site"></nav>
+      <main id="content" class="content">
+        <article class="page">
+          <p class="kicker">Error 404</p>
+          <h1>File not found</h1>
+          <p class="lede">That path is bones. Nothing lives there.</p>
+          <pre class="code">ERROR: FILE NOT FOUND
+ABORTED
+PRESS ANY KEY TO RETURN TO THE MAIN BOARD</pre>
+          <p><a class="btn" href="index.html">Back to Welcome</a></p>
+        </article>
+      </main>
+    </div>
+    <footer id="site-footer"></footer>
+  </div>
+  <script src="js/site.js"></script>
+</body>
+</html>

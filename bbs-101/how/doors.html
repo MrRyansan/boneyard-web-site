@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doors — The Boneyard</title>
+  <meta name="description" content="What BBS doors are: external games and programs you run from inside the board.">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body data-root="../../" data-page="how-doors">
+  <a class="skip" href="#content">Skip to content</a>
+  <div class="crt flicker" id="app">
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <header id="site-header"></header>
+    <div class="shell">
+      <nav id="site-nav" aria-label="Site"></nav>
+      <main id="content" class="content">
+        <article class="page">
+          <p class="kicker">BBS 101 / How a BBS Works</p>
+          <h1>Doors</h1>
+          <p class="lede">A door is a program that is not the BBS, hanging off the side of the BBS. You pick it from a menu. The board steps aside. The other program takes your terminal. When you quit, you are back in the board.</p>
+          <p>The name is literal: you leave the house through a door, fool around in the yard, and come back. Classic doors are games — Legend of the Red Dragon, TradeWars 2002, Barren Realms Elite — but a door can be a database, a news reader, or anything that can talk to a dropfile.</p>
+          <h2>The dropfile, in one paragraph</h2>
+          <p>When you open a door, the BBS writes a small file describing you: handle, time left, node number. The door reads it so it knows who just walked in. You do not have to care about the format. It is the handshake between host and game.</p>
+          <h2>Why they still slap</h2>
+          <p>They are shared. Your knight dies on this machine, not in a cloud that forgot you. Scores sit next to people you also see in the message base. Inter-BBS doors even let boards compete with each other, which is a very old kind of online: slow, petty, beloved.</p>
+          <p>Play, but do not vanish into the arcade and skip mail. The regulars can tell. The sysop can tell. LORD will still be there after you post.</p>
+        </article>
+      </main>
+    </div>
+    <footer id="site-footer"></footer>
+  </div>
+  <script src="../../js/site.js"></script>
+</body>
+</html>

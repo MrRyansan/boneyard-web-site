@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Telnet — The Boneyard</title>
+  <meta name="description" content="Telnet or SSH into The Boneyard BBS at boneyard-bbs.com.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-root="../" data-page="connect">
+  <a class="skip" href="#content">Skip to content</a>
+  <div class="crt flicker" id="app">
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <header id="site-header"></header>
+    <div class="shell">
+      <nav id="site-nav" aria-label="Site"></nav>
+      <main id="content" class="content">
+        <article class="page">
+          <p class="kicker">The Boneyard / Connect</p>
+          <h1>Telnet directly to the BBS</h1>
+          <p class="lede">This website is a sign on the road. The board itself is a terminal session. Call from the browser below, or use a dedicated BBS client if you want the full ANSI treatment.</p>
+          <p class="big-addr" data-bbs="telnet"></p>
+          <div class="btn-row">
+            <a class="btn" href="#browser-telnet">Telnet from this page</a>
+            <a class="btn" data-bbs-href="telnetUrl">Open telnet://</a>
+            <button class="btn" type="button" data-copy-bbs="telnet">Copy address</button>
+            <button class="btn" type="button" data-copy-bbs="sshCmd">Copy SSH command</button>
+          </div>
+          <div class="grid-2">
+            <div class="stat"><dt>Telnet</dt><dd data-bbs="telnet"></dd></div>
+            <div class="stat"><dt>SSH</dt><dd data-bbs="ssh"></dd></div>
+          </div>
+          <h2 id="browser-telnet">From your browser</h2>
+          <p>No client to install. Click Connect in the terminal, wait for the board to paint, and log in. This is <a href="https://www.ftelnet.ca/">fTelnet</a> talking to <code data-bbs="telnet"></code> through your browser. A dedicated client is still better for file transfers and picky ANSI, but this is enough to get a handle and leave mail.</p>
+          <div class="ftelnet-embed">
+            <div id="fTelnetContainer" class="fTelnetContainer"></div>
+            <script>document.write('<script src="//embed-v2.ftelnet.ca/js/ftelnet-loader.norip.xfer.js?v=' + (new Date()).getTime() + '"><\/script>');</script>
+            <script>
+                var Options = new fTelnetOptions();
+                Options.BareLFtoCRLF = false;
+                Options.BitsPerSecond = 57600;
+                Options.ConnectionType = 'telnet';
+                Options.Emulation = 'ansi-bbs';
+                Options.Enter = '\r';
+                Options.Font = 'CP437';
+                Options.ForceWss = false;
+                Options.FullScreenOnConnect = false;
+                Options.Hostname = 'boneyard-bbs.com';
+                Options.LocalEcho = false;
+                Options.NegotiateLocalEcho = true;
+                Options.Port = 8073;
+                Options.ScreenColumns = 80;
+                Options.ScreenRows = 25;
+                Options.SendLocation = true;
+
+                var fTelnet = new fTelnetClient('fTelnetContainer', Options);
+            </script>
+          </div>
+          <p class="note">On a phone, rotate to landscape. The virtual keyboard in fTelnet has the arrow keys a BBS menu expects.</p>
+          <h2>Best clients</h2>
+          <p>A raw telnet window works. It is also the least fun. These clients speak CP437, 16-color ANSI, and the little protocols that make a Mystic board look like a Mystic board:</p>
+          <ul>
+            <li><strong>SyncTERM</strong> — free, cross-platform, the usual recommendation.</li>
+            <li><strong>NetRunner</strong> — from the Mystic author. Feels at home here.</li>
+            <li><strong>mTelnet / MagiTerm / EtherTerm</strong> — other solid options if you already have a favorite.</li>
+          </ul>
+          <h2>From a regular terminal</h2>
+          <p>Windows Terminal, macOS Terminal, or any Unix shell:</p>
+          <pre class="code">telnet boneyard-bbs.com 8073
+ssh -p 8074 boneyard-bbs.com</pre>
+          <p>Windows may need the Telnet Client optional feature, or you can skip that and install SyncTERM. SSH is the cleaner pipe if telnet is blocked on your network.</p>
+          <h2>First call</h2>
+          <ol>
+            <li>Connect. Wait for the login stack to paint.</li>
+            <li>Apply for a new account. Pick a handle. Do not pick “Guest” as a personality.</li>
+            <li>Read the new-user news. Then go look at the message menu before the file menu.</li>
+          </ol>
+          <p class="note">If a <code>telnet://</code> link does nothing, your browser does not have a handler. That is normal. Use a client.</p>
+        </article>
+      </main>
+    </div>
+    <footer id="site-footer"></footer>
+  </div>
+  <script src="../js/site.js"></script>
+</body>
+</html>

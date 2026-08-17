@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How a BBS Works — The Boneyard</title>
+  <meta name="description" content="The moving parts of a bulletin board: nodes, menus, mail, files, doors, and chat.">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body data-root="../../" data-page="how">
+  <a class="skip" href="#content">Skip to content</a>
+  <div class="crt flicker" id="app">
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <header id="site-header"></header>
+    <div class="shell">
+      <nav id="site-nav" aria-label="Site"></nav>
+      <main id="content" class="content">
+        <article class="page">
+          <p class="kicker">BBS 101 / How a BBS Works</p>
+          <h1>How a BBS Works</h1>
+          <p class="lede">Under the menus, a board is a host program, a handful of nodes, and a pile of databases. Mystic is the host here. You are a caller on a node.</p>
+          <p>A <strong>node</strong> is a seat. Old boards had as many nodes as they had phone lines — often one. Telnet boards can have more. If every node is busy, you wait, or you get a busy signal in spirit. Once you are in, the software paints menus (often ANSI), reads your keystrokes, and lets you into the areas you have access to.</p>
+          <p>Access is usually tiered. New users are on a short leash until the sysop validates them. That is not snobbery so much as janitorial work: it keeps the dumpsters from arriving before the regulars.</p>
+          <h2>The four rooms</h2>
+          <p>Most boards are the same house with different wallpaper:</p>
+          <ul class="menu-list">
+            <li><a href="message-boards.html"><span class="num">[1]</span>Message boards — public posts and private mail</a></li>
+            <li><a href="files.html"><span class="num">[2]</span>Files — downloads, uploads, descriptions</a></li>
+            <li><a href="doors.html"><span class="num">[3]</span>Doors — games and other programs bolted on the side</a></li>
+            <li><a href="chat.html"><span class="num">[4]</span>Chat — live talk when more than one soul is online</a></li>
+          </ul>
+          <h2>Menus are the UI</h2>
+          <p>There is no mouse, or there should not need to be one. Letters and numbers move you around. <kbd>H</kbd> or <kbd>?</kbd> is often help. <kbd>Q</kbd> or <kbd>X</kbd> gets you out. Read the prompt. The prompt is the contract.</p>
+          <p>When you log off, your last-read pointers stay behind, so next time the board can say “here is what you missed.” That small courtesy is half the addiction.</p>
+        </article>
+      </main>
+    </div>
+    <footer id="site-footer"></footer>
+  </div>
+  <script src="../../js/site.js"></script>
+</body>
+</html>

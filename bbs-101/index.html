@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What is a BBS? — The Boneyard</title>
+  <meta name="description" content="A plain-language introduction to bulletin board systems, from dial-up to telnet.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-root="../" data-page="what">
+  <a class="skip" href="#content">Skip to content</a>
+  <div class="crt flicker" id="app">
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <header id="site-header"></header>
+    <div class="shell">
+      <nav id="site-nav" aria-label="Site"></nav>
+      <main id="content" class="content">
+        <article class="page">
+          <p class="kicker">BBS 101</p>
+          <h1>What is a BBS?</h1>
+          <p class="lede">A bulletin board system is a computer you log into. Other people log into the same computer. You leave messages, take files, play games, and sometimes talk live. That is the whole trick.</p>
+          <p>The first boards showed up at the end of the 1970s. Ward Christensen and Randy Suess built CBBS in Chicago during a blizzard. Through the 1980s and early 1990s, thousands of hobbyists ran boards out of closets and spare bedrooms, one or two phone lines at a time. You dialed a number. The modem screamed. A menu appeared in 16 colors, or in plain ASCII if you were unlucky.</p>
+          <p>The internet did not kill the idea so much as it outran the phone bill. Forums, email, and later the web did “leave a note for the next person” at global scale. Most boards went dark. A stubborn remainder never did. Others came back on telnet and SSH, which is how you reach The Boneyard today — same ritual, no long-distance charges.</p>
+          <h2>It is not a website</h2>
+          <p>You do not scroll a BBS in a browser tab (not the real one). You connect with a terminal client, you get a node, and you move through menus with keys. Time can be limited. What you type stays in a message base until someone answers — tomorrow, next week, or never. There is no algorithm trying to keep you agitated. There is a sysop, a few dozen regulars, and the weather of a small room.</p>
+          <h2>The shape of a session</h2>
+          <ol>
+            <li>Connect (telnet, SSH, or, on some boards, still a modem).</li>
+            <li>Log in with a handle and a password.</li>
+            <li>Read news, then mail, then public messages.</li>
+            <li>Wander files, doors, and chat if the board has them.</li>
+            <li>Log off. The machine keeps running without you.</li>
+          </ol>
+          <p>Next: <a href="why.html">Why go to one?</a> or skip ahead to <a href="how/index.html">how the machinery works</a>.</p>
+        </article>
+      </main>
+    </div>
+    <footer id="site-footer"></footer>
+  </div>
+  <script src="../js/site.js"></script>
+</body>
+</html>
