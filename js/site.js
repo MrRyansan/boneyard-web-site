@@ -23,51 +23,43 @@ const NAV = [
   {
     id: "about",
     label: "About",
-    href: "about/index.html",
+    href: "about-boneyard.html",
     children: [
-      { id: "about-bbs", label: "The Boneyard BBS", href: "about/index.html" },
-      { id: "about-sysop", label: "Knight Shadow", href: "about/knight-shadow.html" },
+      { id: "about-bbs", label: "The Boneyard BBS", href: "about-boneyard.html" },
+      { id: "about-sysop", label: "Knight Shadow", href: "about-ks.html" },
     ],
   },
   {
     id: "boneyard",
     label: "The Boneyard",
-    href: "connect/index.html",
+    href: "bbs-connect.html",
     children: [
-      { id: "connect", label: "Telnet directly to the BBS", href: "connect/index.html" },
+      { id: "connect", label: "Connect to the Boneyard", href: "bbs-connect.html" },
     ],
   },
   {
     id: "bbs101",
     label: "BBS 101",
-    href: "bbs-101/index.html",
+    href: "bbs-what.html",
     children: [
-      { id: "what", label: "What is a BBS?", href: "bbs-101/index.html" },
-      { id: "why", label: "Why go to one?", href: "bbs-101/why.html" },
+      { id: "what", label: "What is a BBS?", href: "bbs-what.html" },
       {
         id: "how",
         label: "How a BBS Works",
-        href: "bbs-101/how/index.html",
-        children: [
-          { id: "how-messages", label: "Message Boards", href: "bbs-101/how/message-boards.html" },
-          { id: "how-files", label: "Files", href: "bbs-101/how/files.html" },
-          { id: "how-doors", label: "Doors", href: "bbs-101/how/doors.html" },
-          { id: "how-chat", label: "Chat", href: "bbs-101/how/chat.html" },
-        ],
+        href: "bbs-how.html",
       },
       {
         id: "culture",
         label: "BBS Culture",
-        href: "bbs-101/culture/index.html",
-        children: [
-          { id: "culture-art", label: "Art", href: "bbs-101/culture/art.html" },
-          { id: "culture-music", label: "Music", href: "bbs-101/culture/music.html" },
-          { id: "culture-demo", label: "Demoscene", href: "bbs-101/culture/demoscene.html" },
-          { id: "culture-under", label: "The Underground", href: "bbs-101/culture/underground.html" },
-        ],
+        href: "bbs-culture.html",
       },
     ],
   },
+  {
+    id: "links",
+    label: "Links",
+    href: "links.html",
+  }
 ];
 
 const ASCII_TITLE = String.raw` _____ _            ____                                       _
@@ -185,8 +177,31 @@ document.addEventListener("click", (event) => {
   }
 });
 
+function syncCrtOverlays() {
+  const crt = document.getElementById("app");
+  if (!crt) return;
+  const height = `${crt.offsetHeight}px`;
+  crt.querySelectorAll(".scanlines").forEach((el) => {
+    el.style.minHeight = height;
+  });
+}
+
+function watchCrtOverlays() {
+  syncCrtOverlays();
+  window.addEventListener("resize", syncCrtOverlays);
+  window.addEventListener("load", syncCrtOverlays);
+  document.querySelectorAll("img").forEach((img) => {
+    if (!img.complete) img.addEventListener("load", syncCrtOverlays, { once: true });
+  });
+  if ("ResizeObserver" in window) {
+    const crt = document.getElementById("app");
+    if (crt) new ResizeObserver(syncCrtOverlays).observe(crt);
+  }
+}
+
 renderHeader();
 renderNavBar();
 renderFooter();
 fillBbsFields();
+watchCrtOverlays();
 setInterval(tickClock, 1000);

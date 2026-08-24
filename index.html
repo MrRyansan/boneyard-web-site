@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Welcome! — The Boneyard</title>
   <meta name="description" content="Companion site for The Boneyard, a Mystic BBS run by Knight Shadow. Telnet in, or learn how bulletin boards work.">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-root="" data-page="welcome">
-  <a class="skip" href="#content">Skip to content</a>
   <div class="crt flicker" id="app">
     <div class="scanlines" aria-hidden="true"></div>
     <div class="vignette" aria-hidden="true"></div>
@@ -18,7 +17,8 @@
       <nav id="site-nav" aria-label="Site"></nav>
       <main id="content" class="content">
         <article class="page">
-          <pre class="ascii">      ______
+          <div class="skull-row">
+            <pre class="ascii" aria-hidden="true">      ______
    .-'      '-.
   /            \
  |,  .-.  .-.  ,|
@@ -29,28 +29,30 @@
    | \IIIIII/ |
    \          /
     `--------'</pre>
+            <div class="skull-bubble">
+              <p>Hello my Nerds!</p>
+            </div>
+          </div>
           <p class="kicker">Node 1 // Guest login</p>
           <h1>Welcome!</h1>
-          <p class="lede">You have reached the companion site for <strong>The Boneyard</strong>, a Mystic BBS kept by sysop Knight Shadow. This is the porch. The real house is still a terminal.</p>
-          <p>Bulletin boards never really died. They went quiet, then people started calling again — not with a modem scream this time, but with telnet and SSH. The Boneyard is one of those places: a late-night hangout for message bases, files, door games, and the kind of conversation that does not refresh itself every twelve seconds.</p>
+          <p class="lede">You have reached the companion site for <strong>The Boneyard</strong> BBS. A BBS (Bulletin Board System) is what we used back in the 80s and 90s before the Internet was invented. It was how we communicated with each other online, until the internet came and almost completely killed them all. </p>
+          <p>But, bulletin boards never really died. They went quiet, then people started calling again — not with a modem this time, but with telnet and SSH. The Boneyard is one of those places that you can connect to, with a retro feel, a place with message bases, files, door games, and the kind of conversation that does not refresh itself every twelve seconds.</p>
           <div class="panel">
             <h2>Call the board</h2>
             <p class="prompt">&gt; telnet <b data-bbs="telnet"></b></p>
             <p class="prompt">&gt; ssh <b data-bbs="ssh"></b></p>
             <div class="btn-row">
-              <a class="btn" href="connect/index.html">How to connect</a>
-              <a class="btn" data-bbs-href="telnetUrl">Telnet link</a>
+              <a class="btn" href="bbs-connect.html">How to connect</a>
             </div>
           </div>
           <h2>What is this site?</h2>
-          <p>A map, a handshake, and a short education. If you already know what a BBS is, skip to the connect page and dial in. If you do not, start with BBS 101. Either way: grab a handle, be decent, and leave a message.</p>
+          <p>This website is meant as a place for people to learn more about Bulletin Board Systems and what they are as well as how to connect to my BBS. The BBS is the main draw, this site is more of a small educational hub and a door into the main house, giving you the keys to unlock it and come hang out with us.</p>          
           <ul class="menu-list">
-            <li><a href="about/index.html"><span class="num">[1]</span>About The Boneyard</a></li>
-            <li><a href="about/knight-shadow.html"><span class="num">[2]</span>Meet the sysop</a></li>
-            <li><a href="connect/index.html"><span class="num">[3]</span>Telnet directly to the BBS</a></li>
-            <li><a href="bbs-101/index.html"><span class="num">[4]</span>BBS 101 — start here if you are new</a></li>
+            <li><a href="about-boneyard.html"><span class="num">[1]</span>About The Boneyard</a></li>
+            <li><a href="about-ks.html"><span class="num">[2]</span>Meet the sysop</a></li>
+            <li><a href="bbs-connect.html"><span class="num">[3]</span>Connect to the Boneyard</a></li>
+            <li><a href="bbs-what.html"><span class="num">[4]</span>BBS 101 — start here if you are new</a></li>
           </ul>
-          <p class="note">The ground is soft. Stay a while.</p>
         </article>
       </main>
     </div>

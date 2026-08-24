@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connect to the Boneyard — The Boneyard</title>
+  <meta name="description" content="Step-by-step guide to connecting to The Boneyard BBS with SyncTERM at boneyard-bbs.com:8073.">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-root="" data-page="connect">
+  <div class="crt flicker" id="app">
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <header id="site-header"></header>
+    <div class="shell">
+      <nav id="site-nav" aria-label="Site"></nav>
+      <main id="content" class="content">
+        <article class="page">
+          <p class="kicker">The Boneyard / Connect</p>
+          <h1>Connect to the Boneyard</h1>
+          <p class="lede">Below you will find details on how to connect to The Boneyard BBS. The walkthrough uses <strong>SyncTERM</strong> which you can download free from <a href="https://syncterm.bbsdev.net/" target="_blank">syncterm.bbsdev.net</a>.</p>
+
+          <div class="panel">
+            <h2>Connection info</h2>
+            <p class="big-addr" data-bbs="telnet"></p>
+            <div class="btn-row">
+              <button class="btn" type="button" data-copy-bbs="telnet">Copy Telnet</button>
+              <button class="btn" type="button" data-copy-bbs="sshCmd">Copy SSH</button>
+            </div>
+            <div class="grid-2">
+              <div class="stat"><dt>Telnet</dt><dd data-bbs="telnet"></dd></div>
+              <div class="stat"><dt>SSH</dt><dd data-bbs="ssh"></dd></div>
+            </div>
+          </div>
+
+          <h2>Why port 8073? That's kind of an odd port</h2>
+          <figure class="section-photo">
+            <img src="images/pager.gif" alt="Vintage pager used for numeric text messaging before SMS" width="220" loading="lazy">
+          </figure>
+          <p>Back in the days of pagers before phones could text, we used to send messages to each other using numbers where each number represented a letter of the alphabet.</p>
+          <p>So for example  8 could be A, or B, 0 would be O, 7 could be T or N, and 3 would be E. So 8073 would read "Bone", which fits the theme of the board.</p>
+
+
+          <h2>Step-by-step with SyncTERM</h2>
+          <p>Use the bare domain — <strong>not</strong> <code>www</code>. The website lives on <code>www</code>; the BBS lives on <code data-bbs="host"></code>.</p>
+
+          <ol class="guide">
+            <li class="guide-step">
+              <h3>Open SyncTERM</h3>
+              <p>Launch SyncTERM. You will land in the directory / settings screen.</p>
+              <figure><img src="images/terminal/1-open-syncterm.png" alt="SyncTERM directory screen on first launch" loading="lazy" width="960" height="540"></figure>
+            </li>
+            <li class="guide-step">
+              <h3>Add a directory entry</h3>
+              <p>Press <kbd>INS</kbd> (Insert Item) to add a new connection. When prompted for a name, enter something you will recognize — e.g. <strong>The Boneyard</strong>.</p>
+              <figure><img src="images/terminal/2-insert-new-entry.png" alt="Naming a new SyncTERM directory entry The Boneyard" loading="lazy" width="960" height="540"></figure>
+            </li>
+            <li class="guide-step">
+              <h3>Choose Telnet</h3>
+              <p>Select <strong>Telnet</strong> as the connection type.</p>
+              <figure><img src="images/terminal/3-choose-telnet.png" alt="SyncTERM connection type menu with Telnet selected" loading="lazy" width="960" height="540"></figure>
+            </li>
+            <li class="guide-step">
+              <h3>Enter the address</h3>
+              <p>Type <code data-bbs="telnet"></code> and confirm. Host and port together, colon included.</p>
+              <figure><img src="images/terminal/4-enter-address.png" alt="SyncTERM address field showing boneyard-bbs.com:8073" loading="lazy" width="960" height="540"></figure>
+            </li>
+            <li class="guide-step">
+              <h3>Connect</h3>
+              <p>Press <kbd>ESC</kbd> to leave settings. Select <strong>The Boneyard</strong> in the directory and press <kbd>Enter</kbd> (or double-click) to dial in.</p>
+              <figure><img src="images/terminal/5-connect.png" alt="SyncTERM directory listing The Boneyard entry selected" loading="lazy" width="960" height="540"></figure>
+            </li>
+            <li class="guide-step">
+              <h3>Past the splash screen</h3>
+              <p>When the board asks you to press Escape, hit <kbd>ESC</kbd> twice to continue into the login stack.</p>
+              <figure><img src="images/terminal/6-hit-escape.png" alt="BBS splash screen prompting Press ESCAPE twice to continue" loading="lazy" width="960" height="540"></figure>
+            </li>
+            <li class="guide-step">
+              <h3>Enter your handle</h3>
+              <p>Type the username you want. If you are new, pick a handle you can live with — that is who you are on the board.</p>
+              <figure><img src="images/terminal/7-enter-username.png" alt="The Boneyard BBS login screen prompting for username" loading="lazy" width="960" height="540"></figure>
+            </li>
+            <li class="guide-step">
+              <h3>Create a new account</h3>
+              <p>If the name is not on the system yet, Mystic will ask whether to create an account. Choose <strong>Yes</strong>.</p>
+              <figure><img src="images/terminal/8-yes-to-create-acct.png" alt="Prompt asking Create an account with this BBS with Yes selected" loading="lazy" width="960" height="540"></figure>
+            </li>
+            <li class="guide-step">
+              <h3>Fill out the application</h3>
+              <p>Work through the new-user form: handle, location, and the rest. Answer honestly; you can change most of this later from the main menu.</p>
+              <figure><img src="images/terminal/9-new-user-app.png" alt="Mystic new user account application form" loading="lazy" width="960" height="540"></figure>
+            </li>
+            <li class="guide-step">
+              <h3>Set your password</h3>
+              <p>Pick a password and enter it twice. Passwords are case-sensitive and up to 25 characters.</p>
+              <figure><img src="images/terminal/10-create-pass.png" alt="Selecting an account password screen" loading="lazy" width="960" height="540"></figure>
+            </li>
+            <li class="guide-step">
+              <h3>Introduce yourself to the sysop</h3>
+              <p>The board asks you to send a short note to Knight Shadow so we know a real person signed up. Press a key when you see <code>[Paused]</code> to continue.</p>
+              <figure><img src="images/terminal/12-send-feedback.png" alt="New user application feedback instructions" loading="lazy" width="960" height="540"></figure>
+            </li>
+            <li class="guide-step">
+              <h3>Write your message</h3>
+              <p>Type a quick hello in the full-screen editor. Say who you are and what brought you here — a sentence or two is plenty.</p>
+              <figure><img src="images/terminal/13-send-feedback-2.png" alt="Full-screen message editor addressed to Knight Shadow" loading="lazy" width="960" height="540"></figure>
+            </li>
+            <li class="guide-step">
+              <h3>Save and send</h3>
+              <p>Press <kbd>S</kbd> for <strong>Save Message</strong> in the editor command menu.</p>
+              <figure><img src="images/terminal/14-send-feedback-3.png" alt="Editor commands menu with Save Message highlighted" loading="lazy" width="960" height="540"></figure>
+            </li>
+            <li class="guide-step">
+              <h3>New bulletins</h3>
+              <p>Mystic may ask if you want to read new system bulletins. Your call — <strong>Yes</strong> if you want the news, <strong>No</strong> to skip for now.</p>
+              <figure><img src="images/terminal/15-new-bulletins.png" alt="Prompt asking whether to read two new bulletins" loading="lazy" width="960" height="540"></figure>
+            </li>
+            <li class="guide-step">
+              <h3>Welcome mail</h3>
+              <p>You will have mail waiting from the sysop. Choose <strong>Yes</strong> to read it now — worth the minute.</p>
+              <figure><img src="images/terminal/15-new-email.png" alt="Electronic mail prompt showing a Welcome message from Knight Shadow" loading="lazy" width="960" height="540"></figure>
+            </li>
+            <li class="guide-step">
+              <h3>Open your inbox</h3>
+              <p>Select the welcome message and press <kbd>Enter</kbd> to read it.</p>
+              <figure><img src="images/terminal/16-new-email-2.png" alt="BBS email index listing a Welcome message from Knight Shadow" loading="lazy" width="960" height="540"></figure>
+            </li>
+            <li class="guide-step">
+              <h3>Read the welcome</h3>
+              <p>Knight Shadow’s welcome note covers privileges, help keys, and how we behave here. Press a key when you are done reading.</p>
+              <figure><img src="images/terminal/17-new-email-3.png" alt="Welcome email from Knight Shadow to a new user" loading="lazy" width="960" height="540"></figure>
+            </li>
+            <li class="guide-step">
+              <h3>Main menu</h3>
+              <p>You made it. The main menu is home base — messages, files, doors, and the rest. Type a menu letter or press <kbd>?</kbd> for help. Go introduce yourself on the boards.</p>
+              <figure><img src="images/terminal/18-main-menu.png" alt="The Boneyard BBS main menu with message file and door options" loading="lazy" width="960" height="540"></figure>
+            </li>
+          </ol>
+
+          <h2>Other clients and SSH</h2>
+          <p>SyncTERM is not the only option. <strong>NetRunner</strong> (from the Mystic author), MagiTerm, and mTelnet all work.</p>
+        </article>
+      </main>
+    </div>
+    <footer id="site-footer"></footer>
+  </div>
+  <script src="js/site.js"></script>
+</body>
+</html>
