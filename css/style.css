@@ -632,6 +632,72 @@ blockquote {
   max-width: 68ch;
 }
 
+.blog-feed {
+  margin-top: 8px;
+}
+
+.blog-post {
+  max-width: 70ch;
+  margin: 0 0 28px;
+  padding: 0 0 24px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.blog-post:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.blog-post h2 {
+  margin: 0 0 6px;
+  font-size: clamp(26px, 4vw, 36px);
+}
+
+.blog-post h2 a {
+  color: var(--phosphor);
+  text-decoration: none;
+}
+
+.blog-post h2 a:hover {
+  color: #c8ffb0;
+}
+
+.blog-meta {
+  margin: 0 0 14px;
+  color: var(--moss);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.blog-body {
+  max-width: 68ch;
+}
+
+.blog-body p,
+.blog-body li {
+  max-width: 68ch;
+}
+
+.blog-body img {
+  display: block;
+  width: min(100%, 420px);
+  height: auto;
+  margin: 4px 0 16px;
+  border: 2px solid var(--phosphor-dim);
+  border-radius: 4px;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.4),
+    0 0 18px rgba(134, 245, 106, 0.12);
+  filter: saturate(0.85) contrast(1.05);
+}
+
+.blog-more {
+  margin: 16px 0 0;
+  font-size: 13px;
+}
+
 .guide {
   list-style: none;
   margin: 20px 0 28px;

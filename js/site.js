@@ -59,7 +59,12 @@ const NAV = [
     id: "links",
     label: "Links",
     href: "links.html",
-  }
+  },
+  {
+    id: "blog",
+    label: "Blog",
+    href: "blog.html",
+  },
 ];
 
 const ASCII_TITLE = String.raw` _____ _            ____                                       _
