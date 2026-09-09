@@ -506,6 +506,51 @@ h3 {
   margin-right: 10px;
 }
 
+.link-dir {
+  width: 100%;
+  max-width: 78ch;
+  border-collapse: collapse;
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.link-dir th {
+  text-align: left;
+  font-weight: 500;
+}
+
+.link-dir thead th {
+  color: var(--moss);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0 16px 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.link-dir tbody th,
+.link-dir td {
+  padding: 10px 16px 10px 0;
+  vertical-align: top;
+  border-bottom: 1px dashed var(--line);
+}
+
+.link-dir tbody th {
+  width: 30%;
+  color: var(--phosphor);
+  font-family: inherit;
+  font-size: 14px;
+  text-shadow: none;
+}
+
+.link-dir tbody th a {
+  text-decoration: none;
+}
+
+.link-dir td {
+  color: var(--bone-dim);
+}
+
 .ascii {
   margin: 0;
   font-family: var(--font-display);
@@ -680,6 +725,10 @@ blockquote {
   max-width: 68ch;
 }
 
+.blog-body a {
+  overflow-wrap: anywhere;
+}
+
 .blog-body img {
   display: block;
   width: min(100%, 420px);
@@ -840,6 +889,30 @@ blockquote .section-photo img {
 
   .grid-2 {
     grid-template-columns: 1fr;
+  }
+
+  .link-dir thead {
+    display: none;
+  }
+
+  .link-dir,
+  .link-dir tbody,
+  .link-dir tr,
+  .link-dir th,
+  .link-dir td {
+    display: block;
+    width: 100%;
+  }
+
+  .link-dir tbody th {
+    width: 100%;
+    padding-bottom: 2px;
+    border-bottom: 0;
+  }
+
+  .link-dir td {
+    padding-top: 0;
+    padding-bottom: 14px;
   }
 
   .skull-row {

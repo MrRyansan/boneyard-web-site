@@ -91,9 +91,17 @@ function formatDate(value) {
   });
 }
 
+function formatInline(text) {
+  return String(text).replace(
+    /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
+    (_, label, url) => `<a href="${escapeHtml(url)}">${label}</a>`
+  );
+}
+
 function formatBody(raw) {
   let text = String(raw || "");
   text = text.replace(/!\[([^\]]*)\]\((https?:\/\/[^)\s]+)\)/g, "\n\nIMG:$2|$1\n\n");
+  text = formatInline(text);
   text = text.replace(/<\/?p>/gi, "\n");
   text = text.replace(/<br\s*\/?>/gi, "\n");
 
